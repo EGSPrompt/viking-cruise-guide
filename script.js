@@ -1324,3 +1324,133 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+
+// Translation and Currency Functions
+function translateText() {
+    const sourceText = document.getElementById('source-text').value.trim();
+    const sourceLang = document.getElementById('source-lang').value;
+    const targetLang = document.getElementById('target-lang').value;
+    
+    if (!sourceText) {
+        alert('Please enter text to translate');
+        return;
+    }
+    
+    // Note: This is a placeholder for demonstration
+    // In a real implementation, you would use a translation API
+    document.getElementById('target-text').value = `[Translation from ${sourceLang} to ${targetLang}]\n\n"${sourceText}"\n\n⚠️ For actual translations, use Google Translate app or similar service. This is a demo interface.`;
+}
+
+function clearText(type) {
+    if (type === 'source') {
+        document.getElementById('source-text').value = '';
+        document.getElementById('target-text').value = '';
+    }
+}
+
+function copyTranslation() {
+    const translatedText = document.getElementById('target-text').value;
+    if (translatedText) {
+        navigator.clipboard.writeText(translatedText).then(() => {
+            const button = document.querySelector('.copy-translation-btn');
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.style.background = '#27ae60';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '#95a5a6';
+            }, 2000);
+        });
+    }
+}
+
+// Simple exchange rates (in a real app, these would come from an API)
+const exchangeRates = {
+    'USD': { 'EUR': 0.92, 'GBP': 0.79, 'CHF': 0.88, 'HRK': 6.8, 'CAD': 1.36, 'AUD': 1.52 },
+    'EUR': { 'USD': 1.09, 'GBP': 0.86, 'CHF': 0.96, 'HRK': 7.4, 'CAD': 1.48, 'AUD': 1.65 },
+    'GBP': { 'USD': 1.27, 'EUR': 1.16, 'CHF': 1.11, 'HRK': 8.6, 'CAD': 1.72, 'AUD': 1.92 },
+    'CHF': { 'USD': 1.14, 'EUR': 1.04, 'GBP': 0.90, 'HRK': 7.7, 'CAD': 1.55, 'AUD': 1.73 },
+    'HRK': { 'USD': 0.15, 'EUR': 0.14, 'GBP': 0.12, 'CHF': 0.13, 'CAD': 0.20, 'AUD': 0.22 },
+    'CAD': { 'USD': 0.74, 'EUR': 0.68, 'GBP': 0.58, 'CHF': 0.65, 'HRK': 5.0, 'AUD': 1.12 },
+    'AUD': { 'USD': 0.66, 'EUR': 0.61, 'GBP': 0.52, 'CHF': 0.58, 'HRK': 4.5, 'CAD': 0.89 }
+};
+
+function convertCurrency() {
+    const amount = parseFloat(document.getElementById('amount-input').value);
+    const fromCurrency = document.getElementById('from-currency').value;
+    const toCurrency = document.getElementById('to-currency').value;
+    
+    if (!amount || amount <= 0) {
+        alert('Please enter a valid amount');
+        return;
+    }
+    
+    if (fromCurrency === toCurrency) {
+        document.getElementById('converted-amount').value = amount.toFixed(2);
+        document.getElementById('exchange-rate-display').textContent = `1 ${fromCurrency} = 1 ${toCurrency}`;
+        return;
+    }
+    
+    const rate = exchangeRates[fromCurrency] && exchangeRates[fromCurrency][toCurrency];
+    
+    if (rate) {
+        const convertedAmount = (amount * rate).toFixed(2);
+        document.getElementById('converted-amount').value = convertedAmount;
+        document.getElementById('exchange-rate-display').textContent = `1 ${fromCurrency} = ${rate} ${toCurrency}`;
+    } else {
+        document.getElementById('converted-amount').value = 'Rate not available';
+        document.getElementById('exchange-rate-display').textContent = 'Exchange rate not available for this pair';
+    }
+}
+
+function clearAmount() {
+    document.getElementById('amount-input').value = '';
+    document.getElementById('converted-amount').value = '';
+    document.getElementById('exchange-rate-display').textContent = 'Exchange rate will appear here';
+}
+
+function copyAmount() {
+    const convertedAmount = document.getElementById('converted-amount').value;
+    if (convertedAmount && convertedAmount !== 'Rate not available') {
+        navigator.clipboard.writeText(convertedAmount).then(() => {
+            const button = document.querySelector('.copy-amount-btn');
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.style.background = '#27ae60';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '#95a5a6';
+            }, 2000);
+        });
+    }
+}
+
+// Auto-convert when amount or currencies change
+document.addEventListener('DOMContentLoaded', function() {
+    const amountInput = document.getElementById('amount-input');
+    const fromCurrency = document.getElementById('from-currency');
+    const toCurrency = document.getElementById('to-currency');
+    
+    if (amountInput && fromCurrency && toCurrency) {
+        amountInput.addEventListener('input', function() {
+            if (this.value) {
+                convertCurrency();
+            }
+        });
+        
+        fromCurrency.addEventListener('change', function() {
+            if (amountInput.value) {
+                convertCurrency();
+            }
+        });
+        
+        toCurrency.addEventListener('change', function() {
+            if (amountInput.value) {
+                convertCurrency();
+            }
+        });
+    }
+});
+
