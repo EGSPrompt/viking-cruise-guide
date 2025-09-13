@@ -19,9 +19,10 @@
         <div class="container">
             <div class="nav-grid">
                 <a href="#setup" class="nav-item">📱 Setup</a>
-                <a href="#ship" class="nav-item">⚓ Ship Hacks</a>
                 <a href="#ports" class="nav-item">🏛️ Ports</a>
+                <a href="#ship" class="nav-item">⚓ Ship Hacks</a>
                 <a href="#ai-prompts" class="nav-item">🤖 AI Prompts</a>
+                <a href="#resources" class="nav-item">📚 Resources</a>
                 <a href="#emergency" class="nav-item">🚨 Emergency</a>
             </div>
         </div>
@@ -87,7 +88,7 @@
             </div>
         </section>
 
-        <!-- Ports Section -->
+        <!-- AI Prompts Section -->
         <section id="ports" class="section">
             <h2>🏛️ Port Guide</h2>
             <div class="ports-grid">
@@ -200,8 +201,48 @@
                     </div>
                     <button onclick="copyPrompt(this)" class="copy-btn">Copy</button>
                 </div>
+            </div>        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section">
+            <h2>📚 Additional Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>🎧 AI-Generated Podcast</h3>
+                    <p>Listen to an in-depth discussion about your Viking Vesta Mediterranean voyage, created by NotebookLM from all the consolidated research.</p>
+                    <div class="podcast-player">
+                        <audio controls preload="metadata">
+                            <source src="podcast.mp4" type="audio/mp4">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <p class="resource-note">🎯 <strong>Perfect for:</strong> Listening while packing, during travel, or as a refresher before each port</p>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>📄 Complete Research Document</h3>
+                    <p>The full consolidated research document that combines insights from ChatGPT, Claude, and Gemini - your comprehensive reference guide.</p>
+                    <div class="download-section">
+                        <a href="consolidated-research.pdf" download class="download-btn">
+                            📥 Download Full Research PDF
+                        </a>
+                    </div>
+                    <p class="resource-note">🎯 <strong>Perfect for:</strong> Offline reading, detailed planning, and sharing with travel companions</p>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>🔗 Quick Links</h3>
+                    <ul class="quick-links">
+                        <li><a href="https://www.vikingcruises.com" target="_blank">Viking Cruises Official Site</a></li>
+                        <li><a href="https://github.com/EGSPrompt/viking-cruise-guide" target="_blank">This Website's Source Code</a></li>
+                        <li><a href="#emergency">Emergency Phrases (Jump to Section)</a></li>
+                        <li><a href="#ai-prompts">AI Prompts Library (Jump to Section)</a></li>
+                    </ul>
+                    <p class="resource-note">🎯 <strong>Perfect for:</strong> Quick access to official information and key sections</p>
+                </div>
             </div>
         </section>
+
         <!-- Emergency Section -->
         <section id="emergency" class="section emergency-section">
             <h2>🚨 Emergency Information</h2>
