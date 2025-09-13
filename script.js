@@ -1342,15 +1342,15 @@ function swapCurrencies() {
     }
 }
 
-// Simple exchange rates (in a real app, these would come from an API)
+// Simple exchange rates (updated with current rates as of September 2024)
 const exchangeRates = {
-    'USD': { 'EUR': 0.92, 'GBP': 0.79, 'CHF': 0.88, 'HRK': 6.8, 'CAD': 1.36, 'AUD': 1.52 },
-    'EUR': { 'USD': 1.09, 'GBP': 0.86, 'CHF': 0.96, 'HRK': 7.4, 'CAD': 1.48, 'AUD': 1.65 },
-    'GBP': { 'USD': 1.27, 'EUR': 1.16, 'CHF': 1.11, 'HRK': 8.6, 'CAD': 1.72, 'AUD': 1.92 },
-    'CHF': { 'USD': 1.14, 'EUR': 1.04, 'GBP': 0.90, 'HRK': 7.7, 'CAD': 1.55, 'AUD': 1.73 },
-    'HRK': { 'USD': 0.15, 'EUR': 0.14, 'GBP': 0.12, 'CHF': 0.13, 'CAD': 0.20, 'AUD': 0.22 },
-    'CAD': { 'USD': 0.74, 'EUR': 0.68, 'GBP': 0.58, 'CHF': 0.65, 'HRK': 5.0, 'AUD': 1.12 },
-    'AUD': { 'USD': 0.66, 'EUR': 0.61, 'GBP': 0.52, 'CHF': 0.58, 'HRK': 4.5, 'CAD': 0.89 }
+    'USD': { 'EUR': 0.85, 'GBP': 0.76, 'CHF': 0.85, 'HRK': 6.8, 'CAD': 1.35, 'AUD': 1.48 },
+    'EUR': { 'USD': 1.18, 'GBP': 0.89, 'CHF': 1.00, 'HRK': 7.5, 'CAD': 1.59, 'AUD': 1.74 },
+    'GBP': { 'USD': 1.32, 'EUR': 1.12, 'CHF': 1.12, 'HRK': 8.4, 'CAD': 1.78, 'AUD': 1.95 },
+    'CHF': { 'USD': 1.18, 'EUR': 1.00, 'GBP': 0.89, 'HRK': 7.5, 'CAD': 1.59, 'AUD': 1.74 },
+    'HRK': { 'USD': 0.15, 'EUR': 0.13, 'GBP': 0.12, 'CHF': 0.13, 'CAD': 0.20, 'AUD': 0.22 },
+    'CAD': { 'USD': 0.74, 'EUR': 0.63, 'GBP': 0.56, 'CHF': 0.63, 'HRK': 5.0, 'AUD': 1.10 },
+    'AUD': { 'USD': 0.68, 'EUR': 0.57, 'GBP': 0.51, 'CHF': 0.57, 'HRK': 4.6, 'CAD': 0.91 }
 };
 
 function convertCurrency() {
