@@ -22,7 +22,7 @@
                 <a href="#ports" class="nav-item">🏛️ Ports</a>
                 <a href="#ship" class="nav-item">⚓ Ship Hacks</a>
                 <a href="#ai-prompts" class="nav-item">🤖 AI Prompts</a>
-                <a href="#translator" class="nav-item">🛠️ Tools</a>
+                <a href="#currency" class="nav-item">💱 Currency</a>
                 <a href="#resources" class="nav-item">📚 Resources</a>
                 <a href="#emergency" class="nav-item">🚨 Emergency</a>
             </div>
@@ -213,68 +213,25 @@
             </div>
         </section>
 
-        <!-- Translation & Currency Tools Section -->
-        <section id="translator" class="section">
-            <h2>🛠️ Travel Tools</h2>
-            <p class="section-intro">Essential tools for navigating language and currency while traveling:</p>
+        <!-- Currency Converter Section -->
+        <section id="currency" class="section">
+            <h2>💱 Currency Converter</h2>
+            <p class="section-intro">Quick currency conversions for shopping and dining in Mediterranean ports:</p>
             
-            <div class="tools-container">
-                <!-- Translation Tool -->
-                <div class="tool-box">
-                    <h3>🗣️ Quick Translator</h3>
-                    <div class="language-selector">
-                        <label for="source-lang">From:</label>
-                        <select id="source-lang">
-                            <option value="auto">Auto-detect</option>
-                            <option value="it">Italian</option>
-                            <option value="es">Spanish</option>
-                            <option value="fr">French</option>
-                            <option value="hr">Croatian</option>
-                            <option value="ca">Catalan</option>
-                            <option value="de">German</option>
-                        </select>
-                        
-                        <label for="target-lang">To:</label>
-                        <select id="target-lang">
-                            <option value="en">English</option>
-                            <option value="it">Italian</option>
-                            <option value="es">Spanish</option>
-                            <option value="fr">French</option>
-                            <option value="hr">Croatian</option>
-                            <option value="ca">Catalan</option>
-                        </select>
-                    </div>
-                    
-                    <div class="translation-inputs">
-                        <div class="input-section">
-                            <textarea id="source-text" placeholder="Type or paste text to translate..."></textarea>
-                            <button onclick="clearText('source')" class="clear-btn">Clear</button>
-                        </div>
-                        
-                        <div class="translate-button-container">
-                            <button onclick="translateText()" class="translate-btn">🔄 Translate</button>
-                        </div>
-                        
-                        <div class="input-section">
-                            <textarea id="target-text" placeholder="Translation will appear here..." readonly></textarea>
-                            <button onclick="copyTranslation()" class="copy-translation-btn">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Currency Converter -->
-                <div class="tool-box">
-                    <h3>💱 Currency Converter</h3>
+            <div class="currency-container">
+                <div class="currency-box">
                     <div class="currency-selector">
                         <label for="from-currency">From:</label>
                         <select id="from-currency">
-                            <option value="EUR">Euro (€)</option>
                             <option value="USD" selected>US Dollar ($)</option>
+                            <option value="EUR">Euro (€)</option>
                             <option value="GBP">British Pound (£)</option>
                             <option value="CHF">Swiss Franc</option>
                             <option value="CAD">Canadian Dollar</option>
                             <option value="AUD">Australian Dollar</option>
                         </select>
+                        
+                        <button onclick="swapCurrencies()" class="swap-btn" title="Swap currencies">⇄</button>
                         
                         <label for="to-currency">To:</label>
                         <select id="to-currency">
@@ -306,27 +263,29 @@
                         <p id="exchange-rate-display">Exchange rate will appear here</p>
                         <p class="rate-disclaimer">*Rates are approximate. Check current rates for exact conversions.</p>
                     </div>
-                </div>
-            </div>
-            
-            <div class="tools-tips">
-                <h4>💡 Travel Tools Tips:</h4>
-                <div class="tips-grid">
-                    <div class="tip-section">
-                        <h5>🗣️ Translation:</h5>
-                        <ul>
-                            <li>Copy menu items for accurate food translations</li>
-                            <li>Screenshot translations for offline use</li>
-                            <li>Show translated text instead of trying to pronounce</li>
-                        </ul>
-                    </div>
-                    <div class="tip-section">
-                        <h5>💱 Currency:</h5>
-                        <ul>
-                            <li>Most Mediterranean ports use Euro (€)</li>
-                            <li>Croatia may still use Kuna in some places</li>
-                            <li>Always check current rates for large purchases</li>
-                        </ul>
+                    
+                    <div class="currency-tips">
+                        <h4>💡 Currency Tips:</h4>
+                        <div class="tips-grid">
+                            <div class="tip-section">
+                                <h5>🏛️ By Port:</h5>
+                                <ul>
+                                    <li><strong>Most ports:</strong> Euro (€)</li>
+                                    <li><strong>Croatia:</strong> Euro (€) - adopted Jan 2023</li>
+                                    <li><strong>Monaco:</strong> Euro (€)</li>
+                                    <li><strong>Switzerland:</strong> Swiss Franc (CHF) if visiting</li>
+                                </ul>
+                            </div>
+                            <div class="tip-section">
+                                <h5>💳 Payment Tips:</h5>
+                                <ul>
+                                    <li><strong>Contactless:</strong> Widely accepted everywhere</li>
+                                    <li><strong>Cash:</strong> Still needed for small vendors</li>
+                                    <li><strong>ATMs:</strong> Available in all ports</li>
+                                    <li><strong>Tipping:</strong> Round up or 10% in restaurants</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

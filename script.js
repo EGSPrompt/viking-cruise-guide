@@ -1325,43 +1325,20 @@ document.addEventListener('keydown', function(e) {
 });
 
 
-// Translation and Currency Functions
-function translateText() {
-    const sourceText = document.getElementById('source-text').value.trim();
-    const sourceLang = document.getElementById('source-lang').value;
-    const targetLang = document.getElementById('target-lang').value;
+// Currency conversion functions
+function swapCurrencies() {
+    const fromCurrency = document.getElementById('from-currency');
+    const toCurrency = document.getElementById('to-currency');
     
-    if (!sourceText) {
-        alert('Please enter text to translate');
-        return;
-    }
+    // Swap the values
+    const temp = fromCurrency.value;
+    fromCurrency.value = toCurrency.value;
+    toCurrency.value = temp;
     
-    // Note: This is a placeholder for demonstration
-    // In a real implementation, you would use a translation API
-    document.getElementById('target-text').value = `[Translation from ${sourceLang} to ${targetLang}]\n\n"${sourceText}"\n\n⚠️ For actual translations, use Google Translate app or similar service. This is a demo interface.`;
-}
-
-function clearText(type) {
-    if (type === 'source') {
-        document.getElementById('source-text').value = '';
-        document.getElementById('target-text').value = '';
-    }
-}
-
-function copyTranslation() {
-    const translatedText = document.getElementById('target-text').value;
-    if (translatedText) {
-        navigator.clipboard.writeText(translatedText).then(() => {
-            const button = document.querySelector('.copy-translation-btn');
-            const originalText = button.textContent;
-            button.textContent = 'Copied!';
-            button.style.background = '#27ae60';
-            
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.style.background = '#95a5a6';
-            }, 2000);
-        });
+    // If there's an amount, convert it automatically
+    const amountInput = document.getElementById('amount-input');
+    if (amountInput.value) {
+        convertCurrency();
     }
 }
 
