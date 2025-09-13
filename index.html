@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viking Vesta Mediterranean Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚢 Viking Vesta Mediterranean Guide</h1>
+            <p>Your AI-powered insider companion for an authentic Mediterranean voyage</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-grid">
+                <a href="#setup" class="nav-item">📱 Setup</a>
+                <a href="#ship" class="nav-item">⚓ Ship Hacks</a>
+                <a href="#ports" class="nav-item">🏛️ Ports</a>
+                <a href="#ai-prompts" class="nav-item">🤖 AI Prompts</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Setup Section -->
+        <section id="setup" class="section">
+            <h2>📱 Pre-Trip Setup (15 minutes)</h2>
+            <div class="setup-grid">
+                <div class="setup-card">
+                    <h3>Essential Apps</h3>
+                    <ul>
+                        <li>✅ Google Maps (download offline maps)</li>
+                        <li>✅ Google Translate (download language packs)</li>
+                        <li>✅ Viking Voyager App</li>
+                        <li>✅ WhatsApp</li>
+                        <li>✅ XE Currency</li>
+                    </ul>
+                </div>
+                <div class="setup-card">
+                    <h3>Connectivity</h3>
+                    <ul>
+                        <li>🌐 Get a pan-EU eSIM (Airalo/Holafly)</li>
+                        <li>💳 Set up Apple/Google Pay</li>
+                        <li>📱 Create "Cruise" folder on phone</li>
+                        <li>🔋 Charge portable battery pack</li>
+                    </ul>
+                </div>
+                <div class="setup-card">
+                    <h3>Offline Prep</h3>
+                    <ul>
+                        <li>🗺️ Download maps for each port</li>
+                        <li>🗣️ Download Italian, Spanish, French, Croatian</li>
+                        <li>📄 Save digital copies of documents</li>
+                        <li>⏰ Set dining reservation reminders</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ship Hacks Section -->
+        <section id="ship" class="section">
+            <h2>⚓ Viking Vesta Ship Hacks</h2>
+            <div class="ship-grid">
+                <div class="hack-card priority">
+                    <h3>🍽️ Dining Strategy</h3>
+                    <p><strong>Book immediately upon boarding!</strong> Use Viking Voyager app the moment you connect to ship WiFi. Manfredi's and Chef's Table fill up instantly.</p>
+                </div>
+                <div class="hack-card">
+                    <h3>🍷 Unlimited Alcohol</h3>
+                    <p>Bring your own wine/spirits with no limits. No corkage fees even in restaurants. Huge money saver!</p>
+                </div>
+                <div class="hack-card">
+                    <h3>🧺 Free Laundry</h3>
+                    <p>Self-serve laundry on every deck. Best time: mid-day when everyone's ashore.</p>
+                </div>
+                <div class="hack-card">
+                    <h3>🧖‍♀️ Thermal Suite</h3>
+                    <p>Complimentary spa access with snow grotto, sauna, heated loungers. Often empty mornings and port days.</p>
+                </div>
+                <div class="hack-card">
+                    <h3>📶 WiFi Tips</h3>
+                    <p>Ship's library has strongest signal. Use eSIM data in ports for better connectivity.</p>
+                </div>
+                <div class="hack-card">
+                    <h3>🤫 Quiet Spots</h3>
+                    <p>Wintergarden for afternoon tea. Upper Explorer's Lounge for panoramic views without crowds.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ports Section -->
+        <section id="ports" class="section">
+            <h2>🏛️ Port Guide</h2>
+            <div class="ports-grid">
+                <div class="port-card" onclick="openPortModal('venice')">
+                    <h3>🇮🇹 Venice</h3>
+                    <p>Get lost in Cannaregio backstreets</p>
+                    <span class="port-tag">Must-try: Cicchetti & Spritz Select</span>
+                </div>
+                <div class="port-card" onclick="openPortModal('sibenik')">
+                    <h3>🇭🇷 Šibenik</h3>
+                    <p>The "new Dubrovnik" without crowds</p>
+                    <span class="port-tag">Must-try: Peka & Babić wine</span>
+                </div>
+                <div class="port-card" onclick="openPortModal('bari')">
+                    <h3>🇮🇹 Bari</h3>
+                    <p>Watch nonnas make orecchiette</p>
+                    <span class="port-tag">Must-try: Fresh pasta & panzerotti</span>
+                </div>
+                <div class="port-card" onclick="openPortModal('crotone')">
+                    <h3>🇮🇹 Crotone</h3>
+                    <p>Ancient Hera temple column</p>
+                    <span class="port-tag">Must-try: 'Nduja & Cirò wine</span>
+                </div>
+                <div class="port-card" onclick="openPortModal('catania')">
+                    <h3>🇮🇹 Catania</h3>
+                    <p>Vibrant fish market chaos</p>
+                    <span class="port-tag">Must-try: Arancini & granita</span>
+                </div>
+                <div class="port-card" onclick="openPortModal('naples')">
+                    <h3>🇮🇹 Naples</h3>
+                    <p>Pizza pilgrimage birthplace</p>
+                    <span class="port-tag">Must-try: Authentic pizza & sfogliatella</span>
+                </div>
+                <div class="port-card" onclick="openPortModal('rome')">
+                    <h3>🇮🇹 Rome</h3>
+                    <p>Pick one area and own it</p>
+                    <span class="port-tag">Must-try: Cacio e pepe & trapizzino</span>
+                </div>
+                <div class="port-card" onclick="openPortModal('florence')">
+                    <h3>🇮🇹 Florence/Pisa</h3>
+                    <p>Lucca bike ride or Uffizi</p>
+                    <span class="port-tag">Must-try: Cacciucco & lampredotto</span>
+                </div>
+                <div class="port-card" onclick="openPortModal('monaco')">
+                    <h3>🇲🇨 Monte Carlo</h3>
+                    <p>Formula 1 circuit walk</p>
+                    <span class="port-tag">Must-try: Barbagiuan & rosé</span>
+                </div>
+                <div class="port-card" onclick="openPortModal('marseille')">
+                    <h3>🇫🇷 Marseille</h3>
+                    <p>Le Panier & Calanques boats</p>
+                    <span class="port-tag">Must-try: Bouillabaisse & pastis</span>
+                </div>
+                <div class="port-card" onclick="openPortModal('sete')">
+                    <h3>🇫🇷 Sète</h3>
+                    <p>Oyster crawl in Bouzigues</p>
+                    <span class="port-tag">Must-try: Oysters & Picpoul wine</span>
+                </div>
+                <div class="port-card" onclick="openPortModal('barcelona')">
+                    <h3>🇪🇸 Barcelona</h3>
+                    <p>Sagrada Família first slot</p>
+                    <span class="port-tag">Must-try: Vermut hour & bombas</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Prompts Section -->
+        <section id="ai-prompts" class="section">
+            <h2>🤖 AI Prompts Library</h2>
+            <div class="prompts-grid">
+                <div class="prompt-card">
+                    <h3>📋 Menu Translation</h3>
+                    <div class="prompt-text">
+                        "Translate this [Italian/Spanish/French/Croatian] menu into English. For each dish, provide: 1) A brief description, 2) Main ingredients, 3) Your recommendation level (must-try, good, or skip) based on local authenticity."
+                    </div>
+                    <button onclick="copyPrompt(this)" class="copy-btn">Copy</button>
+                </div>
+                <div class="prompt-card">
+                    <h3>🍽️ Local Food Finder</h3>
+                    <div class="prompt-text">
+                        "I'm in [specific neighborhood] and want authentic local food. Recommend: 1) 3 traditional dishes I must try here, 2) Where locals eat (not tourist restaurants), 3) Typical price ranges, 4) Cultural dining etiquette I should know."
+                    </div>
+                    <button onclick="copyPrompt(this)" class="copy-btn">Copy</button>
+                </div>
+                <div class="prompt-card">
+                    <h3>🗺️ Getting Directions</h3>
+                    <div class="prompt-text">
+                        "Help me ask for directions in [local language]. I want to get from [current location] to [destination]. Provide: 1) The exact phrase to say, 2) Phonetic pronunciation, 3) Key words to listen for in their response."
+                    </div>
+                    <button onclick="copyPrompt(this)" class="copy-btn">Copy</button>
+                </div>
+                <div class="prompt-card">
+                    <h3>🏛️ Cultural Etiquette</h3>
+                    <div class="prompt-text">
+                        "List 5 quick etiquette cues for [city/country] today: greetings, tipping, lines, church dress, and dining quirks."
+                    </div>
+                    <button onclick="copyPrompt(this)" class="copy-btn">Copy</button>
+                </div>
+                <div class="prompt-card">
+                    <h3>🚨 Emergency Help</h3>
+                    <div class="prompt-text">
+                        "How do I say these in [language]: I need a pharmacy; I have a headache; I'm allergic to [allergen]; Where is the nearest hospital? I'm from a cruise ship. Give me phonetic pronunciation too."
+                    </div>
+                    <button onclick="copyPrompt(this)" class="copy-btn">Copy</button>
+                </div>
+                <div class="prompt-card">
+                    <h3>☔ Weather Backup</h3>
+                    <div class="prompt-text">
+                        "I'm in [city] and it's [raining heavily/extremely hot]. I have [X hours] before returning to ship. What are the best indoor/shaded things to do near [current location]? Include cafes where I can wait it out."
+                    </div>
+                    <button onclick="copyPrompt(this)" class="copy-btn">Copy</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Port Modals -->
+    <div id="portModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePortModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>🌊 Safe travels and authentic discoveries! Remember to verify critical information and trust your instincts.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
