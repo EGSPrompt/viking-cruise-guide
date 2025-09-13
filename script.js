@@ -920,3 +920,407 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+
+// Ship modal data
+const shipData = {
+    dining: {
+        title: "🍽️ Dining Strategy - Book Smart, Eat Amazing",
+        content: `
+            <h3>🎯 The Golden Rule: Board and Book Immediately</h3>
+            <div class="ship-checklist">
+                <div class="checklist-item priority">
+                    <h4>⚡ First 30 Minutes Onboard</h4>
+                    <p>This is make-or-break time for specialty dining.</p>
+                    <ul>
+                        <li><strong>Connect to ship WiFi immediately</strong></li>
+                        <li><strong>Open Viking Voyager app</strong></li>
+                        <li><strong>Book Manfredi's Italian Restaurant first</strong> (most popular)</li>
+                        <li><strong>Book Chef's Table second</strong> (limited seats)</li>
+                        <li><strong>Consider multiple Chef's Table bookings</strong> (menu changes every 3 days)</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🍝 Manfredi's Italian Restaurant</h4>
+                    <p>The crown jewel of Viking dining - books up within hours.</p>
+                    <ul>
+                        <li>Authentic Italian cuisine with tableside service</li>
+                        <li>No additional charge (included in cruise)</li>
+                        <li>Dress code: Smart casual</li>
+                        <li>Best tables: Window seats for sunset dining</li>
+                        <li>Pro tip: Book early dinner (6 PM) for best light</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>👨‍🍳 The Chef's Table</h4>
+                    <p>Interactive culinary experience with the executive chef.</p>
+                    <ul>
+                        <li>Multi-course tasting menu with wine pairings</li>
+                        <li>Limited to 12 guests per seating</li>
+                        <li>Menu changes every 3 days - book multiple times!</li>
+                        <li>Behind-the-scenes kitchen tour included</li>
+                        <li>Perfect for food enthusiasts and special occasions</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🍽️ Main Dining Room Strategy</h4>
+                    <p>No reservations needed, but timing matters.</p>
+                    <ul>
+                        <li>Open seating for breakfast, lunch, and dinner</li>
+                        <li>Best times: Early (6 PM) or late (8:30 PM) for dinner</li>
+                        <li>Avoid 7-8 PM rush when everyone returns from ports</li>
+                        <li>Request same table/server for consistency</li>
+                        <li>Special dietary needs: Inform staff on first day</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    },
+    alcohol: {
+        title: "🍷 Unlimited Alcohol - The Viking Advantage",
+        content: `
+            <h3>🎯 Bring Your Own - No Limits, No Fees</h3>
+            <div class="ship-checklist">
+                <div class="checklist-item priority">
+                    <h4>🍾 What You Can Bring</h4>
+                    <p>Viking's most generous alcohol policy in cruising.</p>
+                    <ul>
+                        <li><strong>Unlimited wine and spirits</strong> - no bottle limits</li>
+                        <li><strong>Pack in checked luggage</strong> - wrap well</li>
+                        <li><strong>No corkage fees anywhere</strong> - even in specialty restaurants</li>
+                        <li><strong>Room service will serve your bottles</strong></li>
+                        <li><strong>Bring special occasion bottles</strong> for celebrations</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>💰 Money-Saving Strategy</h4>
+                    <p>Save hundreds compared to other cruise lines.</p>
+                    <ul>
+                        <li>Premium spirits onboard: $15-25 per drink</li>
+                        <li>Good wine by the bottle: $40-80</li>
+                        <li>Your cost: Duty-free prices at home</li>
+                        <li>Estimated savings: $300-500 for two people</li>
+                        <li>Pro tip: Buy at duty-free shops during ports</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🍷 Wine Recommendations</h4>
+                    <p>What to bring for Mediterranean ports.</p>
+                    <ul>
+                        <li><strong>Italian ports:</strong> Bring Barolo or Chianti Classico</li>
+                        <li><strong>French ports:</strong> Côtes du Rhône or Provence rosé</li>
+                        <li><strong>Spanish ports:</strong> Rioja or Albariño</li>
+                        <li><strong>Croatian ports:</strong> Try local Plavac Mali onshore</li>
+                        <li><strong>Celebrations:</strong> Champagne or Prosecco</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🥃 Spirits & Cocktails</h4>
+                    <p>Bring your favorites for evening enjoyment.</p>
+                    <ul>
+                        <li>Premium whiskey for deck evenings</li>
+                        <li>Gin for Mediterranean-style G&Ts</li>
+                        <li>Vodka for versatile mixing</li>
+                        <li>Local spirits from ports (limoncello, grappa)</li>
+                        <li>Bar staff will make cocktails with your spirits</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    },
+    laundry: {
+        title: "🧺 Free Laundry - Stay Fresh All Cruise",
+        content: `
+            <h3>🎯 Self-Service Laundry on Every Deck</h3>
+            <div class="ship-checklist">
+                <div class="checklist-item priority">
+                    <h4>🕐 Best Times to Use</h4>
+                    <p>Avoid crowds and always find available machines.</p>
+                    <ul>
+                        <li><strong>Port days 10 AM - 2 PM:</strong> Everyone's ashore</li>
+                        <li><strong>Early morning (7-9 AM):</strong> Before breakfast rush</li>
+                        <li><strong>Late evening (9-11 PM):</strong> After dinner and shows</li>
+                        <li><strong>Avoid:</strong> Sea days and evening return from ports</li>
+                        <li><strong>Pro tip:</strong> Check multiple decks if one is busy</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🧴 What's Provided Free</h4>
+                    <p>Everything you need is included.</p>
+                    <ul>
+                        <li>High-quality detergent pods</li>
+                        <li>Fabric softener</li>
+                        <li>Washing machines (front-loading)</li>
+                        <li>Dryers with multiple heat settings</li>
+                        <li>Ironing boards and irons in each laundry room</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>👕 Packing Strategy</h4>
+                    <p>Pack less, wash more, enjoy the freedom.</p>
+                    <ul>
+                        <li><strong>Bring 7-10 days of clothes</strong> for any length cruise</li>
+                        <li><strong>Pack quick-dry fabrics</strong> for faster turnaround</li>
+                        <li><strong>Bring mesh laundry bags</strong> for delicates</li>
+                        <li><strong>Pack one nice outfit</strong> for special dinners</li>
+                        <li><strong>Swimwear:</strong> Bring 2-3 suits for rotation</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>⏰ Timing Your Loads</h4>
+                    <p>Efficient laundry scheduling for busy cruisers.</p>
+                    <ul>
+                        <li>Wash cycle: 45 minutes</li>
+                        <li>Dry cycle: 60 minutes</li>
+                        <li>Set phone timer - don't leave clothes sitting</li>
+                        <li>Do laundry every 3-4 days for best results</li>
+                        <li>Emergency: Hand wash in cabin sink with shampoo</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    },
+    spa: {
+        title: "🧖‍♀️ Thermal Suite - Your Complimentary Spa Oasis",
+        content: `
+            <h3>🎯 Premium Spa Access Included</h3>
+            <div class="ship-checklist">
+                <div class="checklist-item priority">
+                    <h4>❄️ Snow Grotto Experience</h4>
+                    <p>Unique Nordic wellness tradition onboard.</p>
+                    <ul>
+                        <li><strong>What it is:</strong> Room filled with real snow flakes</li>
+                        <li><strong>How to use:</strong> Enter after sauna for contrast therapy</li>
+                        <li><strong>Benefits:</strong> Improves circulation and skin tone</li>
+                        <li><strong>Duration:</strong> 30 seconds to 2 minutes maximum</li>
+                        <li><strong>Pro tip:</strong> Rub snow on arms and face gently</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🔥 Sauna & Steam Rooms</h4>
+                    <p>Multiple options for different preferences.</p>
+                    <ul>
+                        <li><strong>Finnish sauna:</strong> Dry heat, 180-200°F</li>
+                        <li><strong>Steam room:</strong> Humid heat, eucalyptus scent</li>
+                        <li><strong>Infrared sauna:</strong> Gentle heat, deeper penetration</li>
+                        <li><strong>Best practice:</strong> 10-15 minutes, then cool shower</li>
+                        <li><strong>Hydration:</strong> Drink water before and after</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🛋️ Heated Loungers & Relaxation</h4>
+                    <p>Perfect spots for meditation and rest.</p>
+                    <ul>
+                        <li>Heated ceramic loungers with ocean views</li>
+                        <li>Quiet relaxation areas with soft music</li>
+                        <li>Herbal tea station (complimentary)</li>
+                        <li>Reading nooks with spa magazines</li>
+                        <li>Best times: Early morning or port days</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>⏰ When to Visit</h4>
+                    <p>Strategic timing for the best experience.</p>
+                    <ul>
+                        <li><strong>Early morning (7-9 AM):</strong> Peaceful start to the day</li>
+                        <li><strong>Port days:</strong> Often completely empty</li>
+                        <li><strong>Pre-dinner (4-6 PM):</strong> Relaxing before evening</li>
+                        <li><strong>Avoid:</strong> Post-dinner rush (8-10 PM)</li>
+                        <li><strong>Sea days:</strong> More crowded but still enjoyable</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    },
+    wifi: {
+        title: "📶 WiFi & Connectivity - Stay Connected Smart",
+        content: `
+            <h3>🎯 Ship WiFi Strategy</h3>
+            <div class="ship-checklist">
+                <div class="checklist-item priority">
+                    <h4>📚 Library = Best Signal</h4>
+                    <p>The ship's WiFi sweet spot for important calls.</p>
+                    <ul>
+                        <li><strong>Strongest signal:</strong> Near the main library</li>
+                        <li><strong>Quietest spot:</strong> Perfect for video calls</li>
+                        <li><strong>Comfortable seating:</strong> Leather chairs and tables</li>
+                        <li><strong>Power outlets:</strong> Charge while you work</li>
+                        <li><strong>Pro tip:</strong> Early morning has fastest speeds</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🌐 eSIM Strategy for Ports</h4>
+                    <p>Better connectivity and huge cost savings.</p>
+                    <ul>
+                        <li><strong>Ship WiFi:</strong> $20-30/day, slower speeds</li>
+                        <li><strong>eSIM data:</strong> $10-15 for entire cruise</li>
+                        <li><strong>Speed difference:</strong> eSIM is 5-10x faster in ports</li>
+                        <li><strong>Coverage:</strong> Works in all Mediterranean countries</li>
+                        <li><strong>Setup:</strong> Install at home, activate in Europe</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>📱 Data Usage Tips</h4>
+                    <p>Maximize your connectivity budget.</p>
+                    <ul>
+                        <li><strong>Download offline maps</strong> before sailing</li>
+                        <li><strong>Use ship WiFi for basic browsing</strong></li>
+                        <li><strong>Switch to eSIM for video calls</strong> in ports</li>
+                        <li><strong>Download entertainment</strong> before cruise</li>
+                        <li><strong>WhatsApp works great</strong> on ship WiFi</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🔌 Charging Stations</h4>
+                    <p>Keep your devices powered throughout the ship.</p>
+                    <ul>
+                        <li><strong>Cabin:</strong> US outlets, no adapter needed</li>
+                        <li><strong>Public areas:</strong> USB charging stations</li>
+                        <li><strong>Library:</strong> Multiple outlets at every table</li>
+                        <li><strong>Pool deck:</strong> Charging stations near loungers</li>
+                        <li><strong>Bring:</strong> Portable battery for long port days</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    },
+    quiet: {
+        title: "🤫 Hidden Quiet Spots - Peaceful Moments at Sea",
+        content: `
+            <h3>🎯 Secret Spaces for Solitude</h3>
+            <div class="ship-checklist">
+                <div class="checklist-item priority">
+                    <h4>🌿 Wintergarden</h4>
+                    <p>The ship's most serene indoor space.</p>
+                    <ul>
+                        <li><strong>Location:</strong> Upper deck, glass-enclosed conservatory</li>
+                        <li><strong>Features:</strong> Living plants, comfortable seating, natural light</li>
+                        <li><strong>Perfect for:</strong> Afternoon tea, reading, quiet conversation</li>
+                        <li><strong>Best times:</strong> Morning coffee, late afternoon</li>
+                        <li><strong>Pro tip:</strong> Complimentary tea service 3-5 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🔭 Upper Explorer's Lounge</h4>
+                    <p>Panoramic views without the crowds.</p>
+                    <ul>
+                        <li><strong>360-degree windows</strong> for spectacular views</li>
+                        <li><strong>Comfortable armchairs</strong> perfect for relaxation</li>
+                        <li><strong>Often empty</strong> during port days</li>
+                        <li><strong>Great for:</strong> Sunrise/sunset watching</li>
+                        <li><strong>Bonus:</strong> Sometimes used for lectures and presentations</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🌊 Deck 7 Forward</h4>
+                    <p>Hidden outdoor sanctuary at the ship's bow.</p>
+                    <ul>
+                        <li><strong>Location:</strong> Front of the ship, deck 7</li>
+                        <li><strong>Features:</strong> Wind-protected seating area</li>
+                        <li><strong>Views:</strong> Unobstructed forward ocean views</li>
+                        <li><strong>Perfect for:</strong> Meditation, journaling, photography</li>
+                        <li><strong>Secret:</strong> Most passengers never find this spot</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>📚 Library Nooks</h4>
+                    <p>Cozy reading corners throughout the ship.</p>
+                    <ul>
+                        <li><strong>Main library:</strong> Extensive book collection</li>
+                        <li><strong>Reading alcoves:</strong> Scattered on multiple decks</li>
+                        <li><strong>Comfortable chairs:</strong> Perfect for long reading sessions</li>
+                        <li><strong>Natural light:</strong> Large windows for daytime reading</li>
+                        <li><strong>Quiet policy:</strong> Naturally hushed atmosphere</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🌅 Early Morning Deck Walks</h4>
+                    <p>Have the entire ship to yourself.</p>
+                    <ul>
+                        <li><strong>Best time:</strong> 6:30-7:30 AM</li>
+                        <li><strong>Promenade deck:</strong> Complete circuit around ship</li>
+                        <li><strong>Fresh air:</strong> Peaceful start to the day</li>
+                        <li><strong>Photography:</strong> Golden hour lighting</li>
+                        <li><strong>Exercise:</strong> 3 laps = approximately 1 mile</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    }
+};
+
+// Ship modal functions
+function openShipModal(shipKey) {
+    const modal = document.getElementById('shipModal');
+    const modalBody = document.getElementById('shipModalBody');
+    
+    if (shipData[shipKey]) {
+        modalBody.innerHTML = `
+            <h2>${shipData[shipKey].title}</h2>
+            ${shipData[shipKey].content}
+        `;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeShipModal() {
+    const modal = document.getElementById('shipModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Update window click handler to include ship modal
+window.onclick = function(event) {
+    const portModal = document.getElementById('portModal');
+    const setupModal = document.getElementById('setupModal');
+    const shipModal = document.getElementById('shipModal');
+    
+    if (event.target === portModal) {
+        closePortModal();
+    }
+    if (event.target === setupModal) {
+        closeSetupModal();
+    }
+    if (event.target === shipModal) {
+        closeShipModal();
+    }
+}
+
+// Update keyboard navigation for ship modal
+document.addEventListener('keydown', function(e) {
+    const portModal = document.getElementById('portModal');
+    const setupModal = document.getElementById('setupModal');
+    const shipModal = document.getElementById('shipModal');
+    
+    if (e.key === 'Escape') {
+        if (portModal.style.display === 'block') {
+            closePortModal();
+        }
+        if (setupModal.style.display === 'block') {
+            closeSetupModal();
+        }
+        if (shipModal.style.display === 'block') {
+            closeShipModal();
+        }
+    }
+});
+

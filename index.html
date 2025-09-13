@@ -60,37 +60,45 @@
         <!-- Ship Hacks Section -->
         <section id="ship" class="section">
             <h2>⚓ Viking Vesta Ship Hacks</h2>
+            <p class="section-intro">Essential insider tips for maximizing your Viking Vesta experience. Click each hack for detailed information:</p>
             <div class="ship-grid">
-                <div class="hack-card priority">
+                <div class="ship-card" onclick="openShipModal('dining')">
                     <h3>🍽️ Dining Strategy</h3>
-                    <p><strong>Book immediately upon boarding!</strong> Use Viking Voyager app the moment you connect to ship WiFi. Manfredi's and Chef's Table fill up instantly.</p>
+                    <p>Book specialty restaurants the moment you board</p>
+                    <span class="ship-tag">Manfredi's • Chef's Table • Priority booking</span>
                 </div>
-                <div class="hack-card">
+                <div class="ship-card" onclick="openShipModal('alcohol')">
                     <h3>🍷 Unlimited Alcohol</h3>
-                    <p>Bring your own wine/spirits with no limits. No corkage fees even in restaurants. Huge money saver!</p>
+                    <p>Bring your own wine and spirits with no limits</p>
+                    <span class="ship-tag">No corkage fees • Huge savings • Restaurant service</span>
                 </div>
-                <div class="hack-card">
+                <div class="ship-card" onclick="openShipModal('laundry')">
                     <h3>🧺 Free Laundry</h3>
-                    <p>Self-serve laundry on every deck. Best time: mid-day when everyone's ashore.</p>
+                    <p>Self-serve laundry rooms on every deck</p>
+                    <span class="ship-tag">Free detergent • Best timing • No wait strategy</span>
                 </div>
-                <div class="hack-card">
+                <div class="ship-card" onclick="openShipModal('spa')">
                     <h3>🧖‍♀️ Thermal Suite</h3>
-                    <p>Complimentary spa access with snow grotto, sauna, heated loungers. Often empty mornings and port days.</p>
+                    <p>Complimentary spa access with premium amenities</p>
+                    <span class="ship-tag">Snow grotto • Sauna • Heated loungers</span>
                 </div>
-                <div class="hack-card">
-                    <h3>📶 WiFi Tips</h3>
-                    <p>Ship's library has strongest signal. Use eSIM data in ports for better connectivity.</p>
+                <div class="ship-card" onclick="openShipModal('wifi')">
+                    <h3>📶 WiFi & Connectivity</h3>
+                    <p>Best spots for ship WiFi and data usage tips</p>
+                    <span class="ship-tag">Library signal • eSIM strategy • Port connectivity</span>
                 </div>
-                <div class="hack-card">
-                    <h3>🤫 Quiet Spots</h3>
-                    <p>Wintergarden for afternoon tea. Upper Explorer's Lounge for panoramic views without crowds.</p>
+                <div class="ship-card" onclick="openShipModal('quiet')">
+                    <h3>🤫 Hidden Quiet Spots</h3>
+                    <p>Secret areas for peaceful moments and great views</p>
+                    <span class="ship-tag">Wintergarden • Explorer's Lounge • Deck ends</span>
                 </div>
             </div>
         </section>
 
-        <!-- AI Prompts Section -->
+        <!-- Ports Section -->
         <section id="ports" class="section">
             <h2>🏛️ Port Guide</h2>
+            <p class="section-intro">Discover authentic experiences in each Mediterranean port. Click any port for insider tips, local food recommendations, and hidden gems:</p>
             <div class="ports-grid">
                 <div class="port-card" onclick="openPortModal('venice')">
                     <h3>🇮🇹 Venice</h3>
@@ -361,6 +369,14 @@
         <div class="modal-content">
             <span class="close" onclick="closeSetupModal()">&times;</span>
             <div id="setupModalBody"></div>
+        </div>
+    </div>
+
+    <!-- Ship Modals -->
+    <div id="shipModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeShipModal()">&times;</span>
+            <div id="shipModalBody"></div>
         </div>
     </div>
 
