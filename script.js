@@ -600,3 +600,51 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+
+// Copy emergency text function
+function copyEmergencyText(button) {
+    const emergencyText = button.previousElementSibling.textContent.trim();
+    
+    navigator.clipboard.writeText(emergencyText).then(function() {
+        const originalText = button.textContent;
+        button.textContent = 'Copied!';
+        button.style.background = '#27ae60';
+        
+        setTimeout(function() {
+            button.textContent = originalText;
+            button.style.background = '#e74c3c';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = emergencyText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        button.textContent = 'Copied!';
+        setTimeout(function() {
+            button.textContent = 'Copy';
+        }, 2000);
+    });
+}
+
+// Add emergency section to smooth scrolling
+document.addEventListener('DOMContentLoaded', function() {
+    // Update existing smooth scrolling to include emergency section
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+
