@@ -31,34 +31,27 @@
         <!-- Setup Section -->
         <section id="setup" class="section">
             <h2>📱 Pre-Trip Setup (15 minutes)</h2>
+            <p class="section-intro">Complete these essential steps before departure for a seamless journey. Click each category for detailed instructions:</p>
             <div class="setup-grid">
-                <div class="setup-card">
-                    <h3>Essential Apps</h3>
-                    <ul>
-                        <li>✅ Google Maps (download offline maps)</li>
-                        <li>✅ Google Translate (download language packs)</li>
-                        <li>✅ Viking Voyager App</li>
-                        <li>✅ WhatsApp</li>
-                        <li>✅ XE Currency</li>
-                    </ul>
+                <div class="setup-card" onclick="openSetupModal('apps')">
+                    <h3>📱 Essential Apps</h3>
+                    <p>Download and configure must-have travel apps</p>
+                    <span class="setup-tag">5 apps • Offline maps • Translation</span>
                 </div>
-                <div class="setup-card">
-                    <h3>Connectivity</h3>
-                    <ul>
-                        <li>🌐 Get a pan-EU eSIM (Airalo/Holafly)</li>
-                        <li>💳 Set up Apple/Google Pay</li>
-                        <li>📱 Create "Cruise" folder on phone</li>
-                        <li>🔋 Charge portable battery pack</li>
-                    </ul>
+                <div class="setup-card" onclick="openSetupModal('connectivity')">
+                    <h3>🌐 Connectivity Setup</h3>
+                    <p>Get connected with eSIM and payment setup</p>
+                    <span class="setup-tag">eSIM • Apple/Google Pay • Organization</span>
                 </div>
-                <div class="setup-card">
-                    <h3>Offline Prep</h3>
-                    <ul>
-                        <li>🗺️ Download maps for each port</li>
-                        <li>🗣️ Download Italian, Spanish, French, Croatian</li>
-                        <li>📄 Save digital copies of documents</li>
-                        <li>⏰ Set dining reservation reminders</li>
-                    </ul>
+                <div class="setup-card" onclick="openSetupModal('offline')">
+                    <h3>💾 Offline Preparation</h3>
+                    <p>Download essential data for offline use</p>
+                    <span class="setup-tag">Maps • Languages • Documents</span>
+                </div>
+                <div class="setup-card" onclick="openSetupModal('reminders')">
+                    <h3>⏰ Important Reminders</h3>
+                    <p>Set up booking alerts and travel prep</p>
+                    <span class="setup-tag">Dining • Excursions • Packing</span>
                 </div>
             </div>
         </section>
@@ -318,6 +311,14 @@
         <div class="modal-content">
             <span class="close" onclick="closePortModal()">&times;</span>
             <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Setup Modals -->
+    <div id="setupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSetupModal()">&times;</span>
+            <div id="setupModalBody"></div>
         </div>
     </div>
 

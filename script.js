@@ -648,3 +648,275 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+// Setup modal data
+const setupData = {
+    apps: {
+        title: "📱 Essential Apps Setup",
+        content: `
+            <h3>🎯 Download These Apps First</h3>
+            <div class="setup-checklist">
+                <div class="checklist-item">
+                    <h4>📍 Google Maps</h4>
+                    <p>The gold standard for walking and transit directions worldwide.</p>
+                    <ul>
+                        <li>Download from App Store/Google Play</li>
+                        <li>Allow location access</li>
+                        <li>Sign in with Google account for sync</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🗣️ Google Translate</h4>
+                    <p>Essential for menus, signs, and basic communication.</p>
+                    <ul>
+                        <li>Download from App Store/Google Play</li>
+                        <li>Enable camera access for instant translation</li>
+                        <li>Test the conversation mode</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>⚓ Viking Voyager App</h4>
+                    <p>Your ship's official app for dining reservations and schedules.</p>
+                    <ul>
+                        <li>Download before boarding</li>
+                        <li>Have your booking confirmation ready</li>
+                        <li>Connect immediately when boarding for dining reservations</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>💬 WhatsApp</h4>
+                    <p>Primary messaging app used throughout Europe.</p>
+                    <ul>
+                        <li>Download and verify your phone number</li>
+                        <li>Backup your chats before traveling</li>
+                        <li>Works great with international data plans</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>💱 XE Currency</h4>
+                    <p>Quick currency conversions that work offline.</p>
+                    <ul>
+                        <li>Download and set USD as your home currency</li>
+                        <li>Add EUR as your primary conversion</li>
+                        <li>Works without internet once rates are downloaded</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    },
+    connectivity: {
+        title: "🌐 Connectivity & Payment Setup",
+        content: `
+            <h3>🎯 Get Connected Before You Go</h3>
+            <div class="setup-checklist">
+                <div class="checklist-item priority">
+                    <h4>📶 Pan-EU eSIM (Most Important!)</h4>
+                    <p>Reliable internet that's cheaper than ship WiFi.</p>
+                    <ul>
+                        <li><strong>Check:</strong> Your phone must be unlocked</li>
+                        <li><strong>Providers:</strong> Airalo, Holafly, or Orange Holiday</li>
+                        <li><strong>Plan:</strong> Get 10-20GB for 2-3 weeks</li>
+                        <li><strong>Install:</strong> At home, but don't activate until you land in Europe</li>
+                        <li><strong>Backup:</strong> Keep your regular SIM as backup</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>💳 Contactless Payments</h4>
+                    <p>The most common way to pay in Europe.</p>
+                    <ul>
+                        <li>Add your primary credit cards to Apple Pay or Google Pay</li>
+                        <li>Test it at home to make sure it works</li>
+                        <li>Notify your bank of travel dates</li>
+                        <li>Have a backup card in your money belt</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>📱 Phone Organization</h4>
+                    <p>Keep everything cruise-related in one place.</p>
+                    <ul>
+                        <li>Create a "Cruise" folder on your home screen</li>
+                        <li>Move all travel apps into this folder</li>
+                        <li>Add important phone numbers to contacts</li>
+                        <li>Take screenshots of important confirmations</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🔋 Power Preparation</h4>
+                    <p>Keep your devices charged throughout long port days.</p>
+                    <ul>
+                        <li>Charge your portable battery pack fully</li>
+                        <li>Bring appropriate charging cables</li>
+                        <li>Consider a European plug adapter (Type C/F)</li>
+                        <li>Test everything before you leave</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    },
+    offline: {
+        title: "💾 Offline Data Preparation",
+        content: `
+            <h3>🎯 Download Everything for Offline Use</h3>
+            <div class="setup-checklist">
+                <div class="checklist-item priority">
+                    <h4>🗺️ Offline Maps (Critical!)</h4>
+                    <p>Works without internet and saves battery.</p>
+                    <ul>
+                        <li><strong>Open Google Maps</strong></li>
+                        <li><strong>Search each port city:</strong> Venice, Šibenik, Bari, Crotone, Catania, Naples, Rome, Florence, Monte Carlo, Marseille, Sète, Barcelona</li>
+                        <li><strong>For each city:</strong> Tap the three dots (...) → "Download offline map"</li>
+                        <li><strong>Download area:</strong> Include the port and city center</li>
+                        <li><strong>Storage:</strong> Each map is about 100-200MB</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🗣️ Language Packs</h4>
+                    <p>Translate menus and signs without internet.</p>
+                    <ul>
+                        <li><strong>Open Google Translate</strong></li>
+                        <li><strong>Go to Settings → Offline translation</strong></li>
+                        <li><strong>Download these languages:</strong></li>
+                        <li>• Italian (Venice, Bari, Crotone, Catania, Naples, Rome, Florence)</li>
+                        <li>• Croatian (Šibenik)</li>
+                        <li>• French (Monte Carlo, Marseille, Sète)</li>
+                        <li>• Spanish (Barcelona)</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>📄 Important Documents</h4>
+                    <p>Digital backups in case of loss or theft.</p>
+                    <ul>
+                        <li>Take photos of your passport (store securely)</li>
+                        <li>Screenshot your cruise confirmation</li>
+                        <li>Save flight confirmations to your phone</li>
+                        <li>Store travel insurance policy details</li>
+                        <li>Save emergency contact numbers</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>📱 This Website!</h4>
+                    <p>Save this guide for offline access.</p>
+                    <ul>
+                        <li>Bookmark this page in your browser</li>
+                        <li>Take screenshots of key sections</li>
+                        <li>Copy emergency phrases to your notes app</li>
+                        <li>Save the GitHub link as backup</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    },
+    reminders: {
+        title: "⏰ Important Booking Reminders",
+        content: `
+            <h3>🎯 Set These Reminders Now</h3>
+            <div class="setup-checklist">
+                <div class="checklist-item priority">
+                    <h4>🍽️ Dining Reservations</h4>
+                    <p>Popular restaurants fill up within hours of opening.</p>
+                    <ul>
+                        <li><strong>When:</strong> Booking opens 130-177 days before sailing (varies by cabin category)</li>
+                        <li><strong>Set reminders for:</strong> 130, 140, and 150 days before departure</li>
+                        <li><strong>Priority bookings:</strong> Manfredi's Italian, The Chef's Table</li>
+                        <li><strong>Tip:</strong> Chef's Table menu changes every 3 days - book multiple times</li>
+                        <li><strong>Backup plan:</strong> Use Viking Voyager app the moment you board</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🏛️ Shore Excursions</h4>
+                    <p>Popular tours sell out quickly, especially in Rome and Barcelona.</p>
+                    <ul>
+                        <li><strong>When:</strong> Same timeline as dining (130-177 days before)</li>
+                        <li><strong>High demand:</strong> Rome tours, Barcelona Sagrada Família, Krka National Park</li>
+                        <li><strong>Consider:</strong> Independent exploration vs. ship tours</li>
+                        <li><strong>Research:</strong> Check if you need advance tickets for attractions</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🎫 Attraction Tickets</h4>
+                    <p>Some attractions require advance booking regardless of tours.</p>
+                    <ul>
+                        <li><strong>Sagrada Família (Barcelona):</strong> Book official tickets 2-3 months ahead</li>
+                        <li><strong>Uffizi/Accademia (Florence):</strong> Timed entry tickets recommended</li>
+                        <li><strong>Vatican Museums (Rome):</strong> Skip-the-line tickets if visiting independently</li>
+                        <li><strong>Tip:</strong> Only buy from official websites to avoid markups</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4>🧳 Packing Reminders</h4>
+                    <p>Mediterranean-specific items to remember.</p>
+                    <ul>
+                        <li><strong>Church visits:</strong> Light scarf/shawl for covering shoulders</li>
+                        <li><strong>Monte Carlo casino:</strong> Smart attire for evening gaming rooms</li>
+                        <li><strong>Walking:</strong> Comfortable shoes for cobblestones</li>
+                        <li><strong>Money belt:</strong> Essential for pickpocket-prone areas</li>
+                        <li><strong>Medications:</strong> Bring extra supply + prescriptions</li>
+                    </ul>
+                </div>
+            </div>
+        `
+    }
+};
+
+// Setup modal functions
+function openSetupModal(setupKey) {
+    const modal = document.getElementById('setupModal');
+    const modalBody = document.getElementById('setupModalBody');
+    
+    if (setupData[setupKey]) {
+        modalBody.innerHTML = `
+            <h2>${setupData[setupKey].title}</h2>
+            ${setupData[setupKey].content}
+        `;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeSetupModal() {
+    const modal = document.getElementById('setupModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Update window click handler to include setup modal
+window.onclick = function(event) {
+    const portModal = document.getElementById('portModal');
+    const setupModal = document.getElementById('setupModal');
+    
+    if (event.target === portModal) {
+        closePortModal();
+    }
+    if (event.target === setupModal) {
+        closeSetupModal();
+    }
+}
+
+// Update keyboard navigation for setup modal
+document.addEventListener('keydown', function(e) {
+    const portModal = document.getElementById('portModal');
+    const setupModal = document.getElementById('setupModal');
+    
+    if (e.key === 'Escape') {
+        if (portModal.style.display === 'block') {
+            closePortModal();
+        }
+        if (setupModal.style.display === 'block') {
+            closeSetupModal();
+        }
+    }
+});
+
